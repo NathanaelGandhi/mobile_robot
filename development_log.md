@@ -21,3 +21,8 @@
 - get wheels to show in rviz ```ros2 run joint_state_publisher_gui joint_state_publisher_gui```
 - add inertial macros to robot description
 - saved the rviz config to ```mobile_robot/config/view_bot.rviz```
+- launch the robot with sim time ```ros2 launch mobile_robot rsp.launch.py use_sim_time:=true```
+- install gazebo ```sudo apt install ros-humble-gazebo-ros-pkgs```
+- launch gazebo ros
+- spawn robot
+- write launch file to run these last three elements

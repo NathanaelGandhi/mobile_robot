@@ -1,7 +1,23 @@
-## Robot Package Template
+# mobile_robot
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+[Development Log](devlopment_log.md)
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `mobile_robot` to whatever your project's name is.
+## Setup
 
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
+- Developed in a distrobox (podman) container
+  - ros:humble
+- apt packages
+  - ```sudo apt install -y direnv ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humble-rviz2 ros-humble-gazebo-ros-pkgs```
+
+## Run
+
+- Robot ```ros2 launch mobile_robot rsp.launch.py use_sim_time:=true```
+- Joint states publisher gui ```ros2 run joint_state_publisher_gui joint_state_publisher_gui```
+- rviz ```rviz2 mobile_robot/conig/view_bot.rviz```
+- gazebo ```ros2 launch gazebo_ros gazebo.launch.py```
+- spawn robot ```ros2 run gazebo_ros spawn_entity.py -topic robot_description -entity my_robot```
+- launch simulation ```ros2 launch mobile_robot launch_sim.launch.py```
+  - this loads
+    - robot
+    - gazebo
+    - spawn robot
